@@ -39,8 +39,10 @@ public class TutorialAcitivty extends AppCompatActivity {
         pos5 = (ImageView) findViewById(R.id.tutorial_pos5);
         explainTitle = findViewById(R.id.tutorial_explainTitle);
         explain = findViewById(R.id.tutorial_subExplain);
-        startServiceButton = (Button) findViewById(R.id.tutorail_startService);
+        startServiceButton = (Button) findViewById(R.id.tutorial_startButton);
         explainImg = (ImageView) findViewById(R.id.tutorial_img);
+
+
 
         activateRound(curPos);
         nextButton = (Button) findViewById(R.id.tutorial_nextButton);
