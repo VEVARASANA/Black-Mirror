@@ -61,7 +61,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <TextView
+            <Button
+                android:id="@+id/main_goRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="녹음"
@@ -78,7 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <TextView
+            <Button
+                android:id="@+id/main_report"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="신고"
@@ -86,35 +88,18 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/main_etc"
+            android:id="@+id/main_settingLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="24dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="기능"
-                android:textSize="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_settingLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <TextView
+            <Button
+                android:id="@+id/main_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="설정"

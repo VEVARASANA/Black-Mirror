@@ -7,17 +7,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class SettingActivity extends AppCompatActivity {
+public class Password_1 extends AppCompatActivity {
 
     ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_password_1);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Setting");
+        actionBar.setTitle("Call Key Setup");
 
         LinearLayout linearLayout = findViewById(R.id.linearLayout);
         linearLayout.setOnTouchListener(new View.OnTouchListener() {
