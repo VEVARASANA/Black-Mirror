@@ -31,6 +31,7 @@
 
         <activity android:name=".LockScreenActivity" />
         <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".RecordActivity"/>
     </application>
 
 </manifest>
