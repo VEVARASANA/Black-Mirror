@@ -21,6 +21,7 @@ public class TutorialAcitivty extends AppCompatActivity {
     Button startServiceButton;
     TextView explainTitle;
     TextView explain;
+    ImageView explainImg;
 
     int curPos = 1;
     String TAG = "TutorialActivity";
@@ -39,6 +40,7 @@ public class TutorialAcitivty extends AppCompatActivity {
         explainTitle = findViewById(R.id.tutorial_explainTitle);
         explain = findViewById(R.id.tutorial_subExplain);
         startServiceButton = (Button) findViewById(R.id.tutorail_startService);
+        explainImg = (ImageView) findViewById(R.id.tutorial_img);
 
         activateRound(curPos);
         nextButton = (Button) findViewById(R.id.tutorial_nextButton);
@@ -80,6 +82,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.normal_round);
+                explainImg.setImageResource(R.drawable.tutorial_1);
                 break;
             case 2:
                 Log.d(TAG, "activateRound2 curPos : " + curPos);
@@ -90,6 +93,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.normal_round);
+                explainImg.setImageResource(R.drawable.img_phone);
                 break;
             case 3:
                 Log.d(TAG, "activateRound3 curPos : " + curPos);
@@ -100,6 +104,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.active_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.normal_round);
+                explainImg.setImageResource(R.drawable.img_rec);
                 break;
             case 4:
                 explainTitle.setText(R.string.explain4);
@@ -109,6 +114,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.active_round);
                 pos5.setImageResource(R.drawable.normal_round);
+                explainImg.setImageResource(R.drawable.img_help);
                 break;
             case 5:
 
@@ -120,6 +126,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
                 nextButton.setVisibility(View.GONE);
+                explainImg.setImageResource(R.drawable.img_warning);
                 startServiceButton.setVisibility(View.VISIBLE);
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override
