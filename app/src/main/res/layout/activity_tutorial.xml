@@ -31,6 +31,7 @@
             app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/tutorial_explain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="설명"
@@ -99,6 +100,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/tutorial_previousButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -124,5 +126,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/tutorail_startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:visibility="gone"
+        android:layout_marginBottom="156dp"
+        android:text="Start service"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
