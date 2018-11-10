@@ -30,8 +30,12 @@
             android:exported="true" />
 
         <activity android:name=".LockScreenActivity" />
+<<<<<<< HEAD
+        <activity android:name=".SetPassword"></activity>
+=======
         <activity android:name=".SettingActivity"></activity>
         <activity android:name=".RecordActivity"/>
+>>>>>>> a8c2fcbe37c10e71dcb0e439d30ab6106c9b7d70
     </application>
 
 </manifest>

@@ -10,11 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
         android:layout_marginBottom="100dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -24,20 +20,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:background="@drawable/solid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="37dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/left_right_solid" />
 
         <TextView
-            android:id="@+id/tutorial_explain"
+            android:id="@+id/tutorial_explainTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="설명"
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/tutorial_subExplain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
