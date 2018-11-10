@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">IF_Hackathon</string>
+    <string name="app_name">Black Mirror</string>
     <string name="title_hello">Hello Karasuno</string>
     <string name="title_start">시작하기</string>
-    <string name="title_slogun">Slogun</string>
+    <string name="title_slogun">빠르고 정확한 신고</string>
     <string name="explain1">1. 동기</string>
     <string name="sub_explain1">보복범죄를 막기위해 제작하였습니다.</string>
     <string name="explain2">2. 제스쳐 비밀번호</string>
