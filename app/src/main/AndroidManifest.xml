@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TutorialAcitivty" />
+        <activity android:name=".MainActivity"/>
 
         <service
             android:name=".ScreenService"
