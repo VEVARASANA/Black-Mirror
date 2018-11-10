@@ -14,6 +14,7 @@ public class ScreenReceiver extends BroadcastReceiver {
         if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
             Intent i = new Intent(context, LockScreenActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.addFlags(intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(i);
         }
     }
