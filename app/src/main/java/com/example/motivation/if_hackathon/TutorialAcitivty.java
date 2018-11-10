@@ -43,7 +43,6 @@ public class TutorialAcitivty extends AppCompatActivity {
         explainImg = (ImageView) findViewById(R.id.tutorial_img);
 
 
-
         activateRound(curPos);
         nextButton = (Button) findViewById(R.id.tutorial_nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +76,7 @@ public class TutorialAcitivty extends AppCompatActivity {
     private void activateRound(int curPos) {
         switch (curPos) {
             case 1:
+                startServiceButton.setVisibility(View.GONE);
                 explainTitle.setText(R.string.explain1);
                 explain.setText(R.string.sub_explain1);
                 pos1.setImageResource(R.drawable.active_round);
@@ -87,6 +87,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 explainImg.setImageResource(R.drawable.tutorial_1);
                 break;
             case 2:
+                startServiceButton.setVisibility(View.GONE);
                 Log.d(TAG, "activateRound2 curPos : " + curPos);
                 explainTitle.setText(R.string.explain2);
                 explain.setText(R.string.sub_explain2);
@@ -98,6 +99,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 explainImg.setImageResource(R.drawable.img_phone);
                 break;
             case 3:
+                startServiceButton.setVisibility(View.GONE);
                 Log.d(TAG, "activateRound3 curPos : " + curPos);
                 explainTitle.setText(R.string.explain3);
                 explain.setText(R.string.sub_explain3);
@@ -109,6 +111,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                 explainImg.setImageResource(R.drawable.img_rec);
                 break;
             case 4:
+                startServiceButton.setVisibility(View.GONE);
                 explainTitle.setText(R.string.explain4);
                 explain.setText(R.string.sub_explain4);
                 pos1.setImageResource(R.drawable.normal_round);
@@ -119,7 +122,6 @@ public class TutorialAcitivty extends AppCompatActivity {
                 explainImg.setImageResource(R.drawable.img_help);
                 break;
             case 5:
-
                 explainTitle.setText(R.string.explain5);
                 explain.setText(R.string.sub_explain5);
                 pos1.setImageResource(R.drawable.normal_round);
