@@ -6,7 +6,7 @@
         android:left="4dp">
         <shape
             android:shape="oval">
-            <solid android:color="원하는 백그라운드 색상" />
+            <solid android:color="@color/title_pos" />
         </shape>
     </item>
     <item>
