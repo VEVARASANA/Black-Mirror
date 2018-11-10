@@ -119,14 +119,17 @@ public class TutorialAcitivty extends AppCompatActivity {
             case 5:
 
                 explainTitle.setText(R.string.explain5);
-                //explain.setText(R.string.sub_explain5);
+                explain.setText(R.string.sub_explain5);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
+<<<<<<< HEAD
                 nextButton.setVisibility(View.GONE);
                 explainImg.setImageResource(R.drawable.img_warning);
+=======
+>>>>>>> origin/master
                 startServiceButton.setVisibility(View.VISIBLE);
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -137,6 +140,9 @@ public class TutorialAcitivty extends AppCompatActivity {
                 });
                 break;
             case 6:
+                Intent intent = new Intent(TutorialAcitivty.this, Password_1.class);
+                startActivity(intent);
+                break;
 
         }
     }
