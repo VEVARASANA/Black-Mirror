@@ -176,7 +176,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 mediaPlayer.stop();
                                 break;
                             case "4444":
-                                Log.d("final", "4444작동!");
+                                Log.d("final", "stop");
                                 finish();
                                 break;
                         }
