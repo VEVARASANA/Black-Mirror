@@ -104,6 +104,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 break;
                             case "4444":
                                 Log.d("final","4444작동!");
+                                finish();
                                 break;
                         }
                         array = "";

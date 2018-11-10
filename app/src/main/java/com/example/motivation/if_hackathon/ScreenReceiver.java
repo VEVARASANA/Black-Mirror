@@ -15,7 +15,6 @@ public class ScreenReceiver extends BroadcastReceiver {
             Intent i = new Intent(context, LockScreenActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(i);
-
         }
     }
 }
