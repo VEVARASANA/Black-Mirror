@@ -98,8 +98,8 @@
 
     <Button
         android:id="@+id/tutorial_previousButton"
-        android:layout_width="10dp"
-        android:layout_height="19dp"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
@@ -112,8 +112,8 @@
 
     <Button
         android:id="@+id/tutorial_nextButton"
-        android:layout_width="12dp"
-        android:layout_height="19dp"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
@@ -123,21 +123,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.03" />
-
-    <Button
-        android:id="@+id/tutorail_startService"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:visibility="gone"
-        android:layout_marginBottom="156dp"
-        android:text="Start service"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
