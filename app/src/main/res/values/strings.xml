@@ -3,10 +3,15 @@
     <string name="title_hello">Hello Karasuno</string>
     <string name="title_start">시작하기</string>
     <string name="title_slogun">Slogun</string>
-    <string name="explain1">여러분들 생활 속에서 발생 할 수 있는 범죄와 인간관계들...</string>
-    <string name="explain2">설명2</string>
-    <string name="explain3">설명3</string>
-    <string name="explain4">설명4</string>
-    <string name="explain5">설명5</string>
+    <string name="explain1">1. 동기</string>
+    <string name="sub_explain1">보복범죄를 막기위해 제작하였습니다.</string>
+    <string name="explain2">2. 제스쳐 비밀번호</string>
+    <string name="sub_explain2">제스쳐를 통해 빠른 신고를 할 수 있습니다.</string>
+    <string name="explain3">3. 녹음 기능</string>
+    <string name="sub_explain3">녹음 기능을 통해 증거를 남길 수 있습니다.</string>
+    <string name="explain4">4. 문자 신고</string>
+    <string name="sub_explain4">문자 신고를 통해 바로 경찰에게 신고가 가능합니다.</string>
+    <string name="explain5">5. 경보</string>
+    <string name="sub_explain5">미리 녹음한 경보를 울려 더 확실하게 상황전달을 할 수 있습니다.</string>
 
 </resources>
