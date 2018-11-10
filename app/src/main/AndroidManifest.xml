@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+=======
+>>>>>>> origin/master
 
     <application
         android:allowBackup="true"
@@ -37,9 +42,20 @@
             android:exported="true" />
 
         <activity android:name=".LockScreenActivity" />
+<<<<<<< HEAD
+        <activity android:name=".SetPassword" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".RecordActivity" />
+        <activity android:name=".SetPassword" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".RecordActivity" />
+        <activity android:name=".Password_1" />
+        <activity android:name=".Password_Set"></activity>
+=======
         <activity android:name=".SetPassword"></activity>
         <activity android:name=".SettingActivity"></activity>
         <activity android:name=".RecordActivity" />
+>>>>>>> origin/master
     </application>
 
 </manifest>
