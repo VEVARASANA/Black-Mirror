@@ -1,5 +1,6 @@
 package com.example.motivation.if_hackathon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -118,15 +119,15 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
-//                startServiceButton.setVisibility(View.VISIBLE);
-//                startServiceButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
-//                        startActivity(intent);
-//                    }
-//                });
-//                break;
+                startServiceButton.setVisibility(View.VISIBLE);
+                startServiceButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
             case 6:
 
         }
