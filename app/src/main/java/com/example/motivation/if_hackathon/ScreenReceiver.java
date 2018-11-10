@@ -21,7 +21,11 @@ public class ScreenReceiver extends BroadcastReceiver {
         }
 
         if(intent.getAction().equals(Intent.ACTION_MEDIA_BUTTON) && IsOnLockScreen==true){
-            Log.d("nedia button", "test");
+            Log.d("nedia button", "JESTURETEST");
+        }
+
+        if(intent.getAction().equals(Intent.ACTION_SCREEN_OFF) && IsOnLockScreen==true){
+            Log.d("nedia button", "HOMEATEST");
         }
     }
 }
