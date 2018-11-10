@@ -8,6 +8,6 @@ public class Tutorial1Acitivty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutorial1_acitivty);
+        setContentView(R.layout.activity_tutorial);
     }
 }
