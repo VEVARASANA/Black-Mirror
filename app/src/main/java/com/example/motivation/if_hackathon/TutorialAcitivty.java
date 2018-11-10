@@ -1,5 +1,6 @@
 package com.example.motivation.if_hackathon;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -116,7 +117,8 @@ public class TutorialAcitivty extends AppCompatActivity {
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(TutorialAcitivty.this, ScreenService.class);
+                        startService(intent);
                     }
                 });
                 break;
