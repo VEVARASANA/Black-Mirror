@@ -92,7 +92,20 @@ public class LockScreenActivity extends AppCompatActivity {
 
                     if(array.length() > 3){
                         Log.d("test","array = " + array);
-                        //명령어 입력
+                        switch(array){
+                            case "1111":
+                                Log.d("final","1111작동!");
+                                break;
+                            case "2222":
+                                Log.d("final","2222작동!");
+                                break;
+                            case "3333":
+                                Log.d("final","3333작동!");
+                                break;
+                            case "4444":
+                                Log.d("final","4444작동!");
+                                break;
+                        }
                         array = "";
                     }
                 }
