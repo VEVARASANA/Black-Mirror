@@ -16,7 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TutorialAcitivty"></activity>
+        <activity android:name=".TutorialAcitivty" />
+
+        <service
+            android:name=".ScreenService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".ScreenReciver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".LockScreenActivity"></activity>
     </application>
 
 </manifest>
