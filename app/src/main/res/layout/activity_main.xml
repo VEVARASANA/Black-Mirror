@@ -47,10 +47,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
+            android:layout_marginBottom="27dp"
             android:text="Untitled"
             android:textColor="@color/stringColor"
-            android:textSize="25sp"
-            android:layout_marginBottom="27dp"/>
+            android:textSize="25sp" />
 
         <LinearLayout
             android:id="@+id/main_recordLayout"
@@ -69,10 +69,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="24dp"
             android:id="@+id/main_reportLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -87,9 +87,9 @@
 
         <LinearLayout
             android:id="@+id/main_etc"
-            android:layout_marginTop="24dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -103,14 +103,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="40dp"
             android:id="@+id/main_settingLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/ic_launcher_round" />
 
             <TextView
                 android:layout_width="wrap_content"
