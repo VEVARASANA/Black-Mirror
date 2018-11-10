@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IF_Hackathon</string>
+    <string name="title_hello">Hello Karasuno</string>
+    <string name="title_next">다음</string>
 </resources>
