@@ -97,32 +97,32 @@
     </LinearLayout>
 
     <Button
-        android:background="@mipmap/img_previous"
         android:id="@+id/tutorial_previousButton"
-        android:layout_width="12dp"
+        android:layout_width="10dp"
         android:layout_height="19dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@mipmap/img_previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <Button
         android:id="@+id/tutorial_nextButton"
         android:layout_width="12dp"
         android:layout_height="19dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
         android:background="@mipmap/img_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <Button
         android:id="@+id/tutorail_startService"

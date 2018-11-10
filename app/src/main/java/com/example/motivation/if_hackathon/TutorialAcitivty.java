@@ -113,12 +113,13 @@ public class TutorialAcitivty extends AppCompatActivity {
             case 5:
 
                 explainTitle.setText(R.string.explain5);
-                explain.setText(R.string.sub_explain5);
+                //explain.setText(R.string.sub_explain5);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
+                nextButton.setVisibility(View.GONE);
                 startServiceButton.setVisibility(View.VISIBLE);
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override

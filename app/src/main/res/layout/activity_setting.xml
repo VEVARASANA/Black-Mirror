@@ -5,14 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:text=" 기본 설정"
-        android:textColor="#707070"
-        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="19dp"
+        android:text="기본 설정"
+        android:textColor="#aaa5a5"
+        android:textSize="17sp"
         android:textStyle="normal" />
 
     <LinearLayout
@@ -25,25 +29,102 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:text="호출키"
-            android:textSize="20sp" />
+            android:paddingLeft="16dp"
+            android:paddingTop="22dp"
+            android:text="호출 키"
+            android:textColor="#010101"
+            android:textSize="21sp"
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="2dp"
             android:text="각 기능을 작동시키는 호출 키를 설정할 수 있습니다."
-            android:textSize="15sp"/>
+            android:textColor="#aaa5a5"
+            android:textSize="18sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:paddingTop="50dp" />
+        android:layout_marginLeft="10dp"
+        android:checked="false"
+        android:paddingLeft="30dp"
+        android:text="상태바 알림"
+        android:textSize="21sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="73dp"
+        android:text="상태바의 알림 설정을 끄고 킬수 있습니다."
+        android:textColor="#aaa5a5"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="60dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="170dp"
+        android:text="Credit"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0.5dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="140dp"
+        android:text="Team Karasuno"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="115dp"
+        android:text="이순형,최형우,한재상"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="115dp"
+        android:text="박현수,이유빈,이교은"
+        android:textSize="22sp" />
 
 </LinearLayout>
 
