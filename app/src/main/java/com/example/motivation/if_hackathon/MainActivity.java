@@ -24,10 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         serviceSwitch = (SwitchCompat) findViewById(R.id.main_serviceSwitch);
         serviceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            Intent intent = new Intent(MainActivity.this, ScreenService.class);
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Intent intent = new Intent(MainActivity.this, ScreenService.class);
-                startService(intent);
+                if (isChecked == true) {
+                    startService(intent);
+                } else {
+                    stopService(intent);
+                }
             }
         });
 
