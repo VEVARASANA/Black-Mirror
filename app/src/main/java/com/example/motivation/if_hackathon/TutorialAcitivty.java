@@ -119,7 +119,6 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
-                nextButton.setVisibility(View.GONE);
                 startServiceButton.setVisibility(View.VISIBLE);
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -130,6 +129,9 @@ public class TutorialAcitivty extends AppCompatActivity {
                 });
                 break;
             case 6:
+                Intent intent = new Intent(TutorialAcitivty.this, Password_1.class);
+                startActivity(intent);
+                break;
 
         }
     }
