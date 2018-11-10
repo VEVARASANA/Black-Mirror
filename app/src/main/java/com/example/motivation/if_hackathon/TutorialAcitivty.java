@@ -125,11 +125,8 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
-<<<<<<< HEAD
                 nextButton.setVisibility(View.GONE);
                 explainImg.setImageResource(R.drawable.img_warning);
-=======
->>>>>>> origin/master
                 startServiceButton.setVisibility(View.VISIBLE);
                 startServiceButton.setOnClickListener(new View.OnClickListener() {
                     @Override
