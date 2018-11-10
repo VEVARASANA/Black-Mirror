@@ -1,6 +1,5 @@
 package com.example.motivation.if_hackathon;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,7 +18,8 @@ public class TutorialAcitivty extends AppCompatActivity {
     Button nextButton;
     Button previousButton;
     Button startServiceButton;
-    TextView explainTextView;
+    TextView explainTitle;
+    TextView explain;
 
     int curPos = 1;
     String TAG = "TutorialActivity";
@@ -35,7 +35,8 @@ public class TutorialAcitivty extends AppCompatActivity {
         pos3 = (ImageView) findViewById(R.id.tutorial_pos3);
         pos4 = (ImageView) findViewById(R.id.tutorial_pos4);
         pos5 = (ImageView) findViewById(R.id.tutorial_pos5);
-        explainTextView = findViewById(R.id.tutorial_explain);
+        explainTitle = findViewById(R.id.tutorial_explainTitle);
+        explain = findViewById(R.id.tutorial_subExplain);
         startServiceButton = (Button) findViewById(R.id.tutorail_startService);
 
         activateRound(curPos);
@@ -71,7 +72,8 @@ public class TutorialAcitivty extends AppCompatActivity {
     private void activateRound(int curPos) {
         switch (curPos) {
             case 1:
-                explainTextView.setText(R.string.explain1);
+                explainTitle.setText(R.string.explain1);
+                explain.setText(R.string.sub_explain1);
                 pos1.setImageResource(R.drawable.active_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.normal_round);
@@ -80,7 +82,8 @@ public class TutorialAcitivty extends AppCompatActivity {
                 break;
             case 2:
                 Log.d(TAG, "activateRound2 curPos : " + curPos);
-                explainTextView.setText(R.string.explain2);
+                explainTitle.setText(R.string.explain2);
+                explain.setText(R.string.sub_explain2);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.active_round);
                 pos3.setImageResource(R.drawable.normal_round);
@@ -89,7 +92,8 @@ public class TutorialAcitivty extends AppCompatActivity {
                 break;
             case 3:
                 Log.d(TAG, "activateRound3 curPos : " + curPos);
-                explainTextView.setText(R.string.explain3);
+                explainTitle.setText(R.string.explain3);
+                explain.setText(R.string.sub_explain3);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.active_round);
@@ -97,7 +101,8 @@ public class TutorialAcitivty extends AppCompatActivity {
                 pos5.setImageResource(R.drawable.normal_round);
                 break;
             case 4:
-                explainTextView.setText(R.string.explain4);
+                explainTitle.setText(R.string.explain4);
+                explain.setText(R.string.sub_explain4);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.normal_round);
@@ -106,21 +111,22 @@ public class TutorialAcitivty extends AppCompatActivity {
                 break;
             case 5:
 
-                explainTextView.setText(R.string.explain5);
+                explainTitle.setText(R.string.explain5);
+                explain.setText(R.string.sub_explain5);
                 pos1.setImageResource(R.drawable.normal_round);
                 pos2.setImageResource(R.drawable.normal_round);
                 pos3.setImageResource(R.drawable.normal_round);
                 pos4.setImageResource(R.drawable.normal_round);
                 pos5.setImageResource(R.drawable.active_round);
-                startServiceButton.setVisibility(View.VISIBLE);
-                startServiceButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                break;
+//                startServiceButton.setVisibility(View.VISIBLE);
+//                startServiceButton.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
+//                        startActivity(intent);
+//                    }
+//                });
+//                break;
             case 6:
 
         }
