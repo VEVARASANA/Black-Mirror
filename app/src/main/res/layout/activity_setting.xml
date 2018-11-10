@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,9 +9,11 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="user Controls"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:paddingTop="15dp"
+        android:text=" 기본 설정"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        android:textStyle="normal" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,16 +25,25 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:paddingTop="20dp"
+            android:text="호출키"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="각 기능을 작동시키는 호출 키를 설정할 수 있습니다."
+            android:textSize="15sp"/>
 
     </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:paddingTop="50dp" />
 
 </LinearLayout>
 
