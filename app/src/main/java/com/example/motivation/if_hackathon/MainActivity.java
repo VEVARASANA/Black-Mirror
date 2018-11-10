@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     SwitchCompat serviceSwitch;
     LinearLayout settingLayout;
     Button goRecord;
+    Button goReport;
+    Button goSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goSetting = (Button) findViewById(R.id.main_setting);
+        goSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
         });
