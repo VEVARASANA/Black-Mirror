@@ -14,8 +14,6 @@ import android.widget.Toast;
 public class TitleActivity extends AppCompatActivity {
 
     Button nextButton;
-//    final int permissonCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
-//    private static final int PERMISSIONS_REQUEST_READ_SMS = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +29,16 @@ public class TitleActivity extends AppCompatActivity {
             }
         });
 
-//        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
-//                || ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(TitleActivity.this, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-//        }
-//
-//        if (permissonCheck == PackageManager.PERMISSION_GRANTED) {
-//            Toast.makeText(getApplicationContext(), "SMS 수신권한 있음", Toast.LENGTH_SHORT).show();
-//        } else {
-//            Toast.makeText(getApplicationContext(), "SMS 수신권한 없음", Toast.LENGTH_SHORT).show();
-//            ActivityCompat.requestPermissions(TitleActivity.this,
-//                    new String[]{Manifest.permission.SEND_SMS},
-//                    PERMISSIONS_REQUEST_READ_SMS);
-//
-//        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
+
+            } else {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS, Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE},
+                        100);
+            }
+        }
     }
 }

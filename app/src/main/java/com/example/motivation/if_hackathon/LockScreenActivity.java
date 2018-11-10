@@ -69,9 +69,7 @@ public class LockScreenActivity extends AppCompatActivity {
         final int permissonCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
 
         if (permissonCheck == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(getApplicationContext(), "SMS 수신권한 있음", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "SMS 수신권한 없음", Toast.LENGTH_SHORT).show();
             ActivityCompat.requestPermissions(LockScreenActivity.this,
                     new String[]{Manifest.permission.SEND_SMS},
                     PERMISSIONS_REQUEST_READ_SMS);
