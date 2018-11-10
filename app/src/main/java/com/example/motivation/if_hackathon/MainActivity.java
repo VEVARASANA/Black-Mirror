@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Intent intent = new Intent(MainActivity.this, ScreenService.class);
-                startService(intent);
+                startService(intent); //
             }
         });
     }
