@@ -129,6 +129,9 @@ public class TutorialAcitivty extends AppCompatActivity {
                 });
                 break;
             case 6:
+                Intent intent = new Intent(TutorialAcitivty.this, Password_1.class);
+                startActivity(intent);
+                break;
 
         }
     }
