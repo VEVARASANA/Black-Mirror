@@ -21,7 +21,7 @@ public class TutorialAcitivty extends AppCompatActivity {
     Button startServiceButton;
     TextView explainTextView;
 
-    int curPos = 0;
+    int curPos = 1;
     String TAG = "TutorialActivity";
 
 
@@ -38,6 +38,7 @@ public class TutorialAcitivty extends AppCompatActivity {
         explainTextView = findViewById(R.id.tutorial_explain);
         startServiceButton = (Button) findViewById(R.id.tutorail_startService);
 
+        activateRound(curPos);
         nextButton = (Button) findViewById(R.id.tutorial_nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +48,6 @@ public class TutorialAcitivty extends AppCompatActivity {
                 else
                     curPos++;
 
-                Log.d(TAG, "curPos : " + curPos);
                 activateRound(curPos);
             }
         });
@@ -71,7 +71,6 @@ public class TutorialAcitivty extends AppCompatActivity {
     private void activateRound(int curPos) {
         switch (curPos) {
             case 1:
-                Log.d(TAG, "activateRound1 curPos : " + curPos);
                 explainTextView.setText(R.string.explain1);
                 pos1.setImageResource(R.drawable.active_round);
                 pos2.setImageResource(R.drawable.normal_round);
