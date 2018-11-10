@@ -45,28 +45,34 @@ public class LockScreenActivity extends AppCompatActivity {
                 if(action == MotionEvent.ACTION_DOWN){
                     priX = curX;
                     priY = curY;
+                    Log.d("test", "k");
                 }else if(action == MotionEvent.ACTION_UP){
                     nexX = curX;
                     nexY = curY;
+                    Log.d("test", "k");
 
                     float resX = nexX - priX;
                     float resY = nexY - priY;
 
                     if( (resY - resX) > 0 && (resY + resX) > 0){                 //up
                         array[i] = 1;
+                        Log.d("test", "k");
                     } else if( (resY - resX) > 0 && (resY + resX) < 0){          //left
                         array[i] = 2;
+                        Log.d("test", "k");
                     } else if( (resY - resX) < 0 && (resY + resX) < 0){          //down
                         array[i] = 3;
+                        Log.d("test", "k");
                     } else if( (resY - resX) < 0 && (resY + resX) > 0){          //right
                         array[i] = 4;
+                        Log.d("test", "k");
                     }
 
                     if(i < 3){
                         i++;
                         Log.d("test", "k");
                     }else{
-                        Log.d("array",array.toString());
+                        Log.d("test",array.toString());
                         i = 0;
                     }
 
