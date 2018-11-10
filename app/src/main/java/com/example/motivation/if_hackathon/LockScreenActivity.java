@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -50,6 +51,8 @@ public class LockScreenActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     String path;
 
+    ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +62,9 @@ public class LockScreenActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_FULLSCREEN
                         |WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        actionBar = getSupportActionBar();
+        actionBar.hide();
 
         final int permissonCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
 
