@@ -12,6 +12,7 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -180,6 +181,8 @@ public class LockScreenActivity extends AppCompatActivity {
                                 finish();
                                 break;
                         }
+                        final Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                        vibrator.vibrate(1000);
                         array = "";
                     }
                 }
