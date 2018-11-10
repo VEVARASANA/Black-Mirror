@@ -1,90 +1,65 @@
 package com.example.motivation.if_hackathon;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.File;
 import java.io.IOException;
 
-public class RecordActivity extends AppCompatActivity {
+public class RecordActivity extends Activity {
 
-    MediaRecorder recorder;
-    Button recordStartButton;
-    Button recordStopButton;
+    Button btnRecord;
+    MediaRecorder mediaRecorder;
+    String path = "";
+     Button btnStop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
 
-        recorder = new MediaRecorder();
-        recordStartButton = (Button) findViewById(R.id.record_recordStart);
-        recordStartButton.setOnClickListener(new View.OnClickListener() {
+        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
+                || ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(RecordActivity.this, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+        }
+
+        path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/siren.3gp";
+
+        mediaRecorder = new MediaRecorder();
+        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mediaRecorder.setOutputFile(path);
+
+        btnRecord = (Button) findViewById(R.id.record_recordStart);
+        btnRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startRec();
+                try {
+                    mediaRecorder.prepare(); //녹음을 준비함 : 지금까지의 옵션에서 문제가 발생했는지 검사함
+                    mediaRecorder.start();
+                    Toast.makeText(getApplicationContext(), "녹음시작", Toast.LENGTH_LONG).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
-        recordStopButton = (Button) findViewById(R.id.record_recordStop);
-        recordStopButton.setOnClickListener(new View.OnClickListener() {
+        btnStop = (Button) findViewById(R.id.record_stop);
+        btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stopRec();
+                mediaRecorder.stop();
+                Toast.makeText(getApplicationContext(), "녹음종료", Toast.LENGTH_LONG).show();
             }
         });
-
-
-    }
-
-    public void startRec() {
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
-                    10);
-        } else {
-            try {
-                File file = Environment.getExternalStorageDirectory();
-
-                String path = file.getAbsolutePath() + "/" + "recoder.mp3";
-
-                recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-
-                recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-
-                recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-                recorder.setOutputFile(path);
-                recorder.prepare();
-                recorder.start();
-                Toast.makeText(this, "start Record", Toast.LENGTH_LONG).show();
-            } catch (IllegalStateException e) {
-
-                e.printStackTrace();
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void stopRec() {
-        try{
-            recorder.stop();
-        } catch (RuntimeException ex){
-
-        }
-        recorder.release();
-        Toast.makeText(this, "stop Record", Toast.LENGTH_LONG).show();
     }
 }
-
-
