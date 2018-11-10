@@ -45,6 +45,7 @@ public class TutorialAcitivty extends AppCompatActivity {
                         pos1.setImageResource(R.drawable.active_round);
                     case 5:
                         pos1.setImageResource(R.drawable.active_round);
+                        //
                 }
             }
         });
