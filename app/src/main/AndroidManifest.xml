@@ -50,6 +50,9 @@
         <activity android:name=".SetPassword"></activity>
         <activity android:name=".SettingActivity"></activity>
         <activity android:name=".RecordActivity" />
+        <activity android:name=".SetPassword"></activity>
+        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".RecordActivity" />
     </application>
 
 </manifest>
