@@ -30,8 +30,7 @@
             android:exported="true" />
 
         <activity android:name=".LockScreenActivity" />
-        <activity android:name=".Setting" />
-        <activity android:name=".Setting2"></activity>
+        <activity android:name=".SettingActivity"></activity>
     </application>
 
 </manifest>
