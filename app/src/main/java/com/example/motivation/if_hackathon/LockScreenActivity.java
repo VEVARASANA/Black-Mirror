@@ -9,73 +9,92 @@ import android.view.WindowManager;
 
 public class LockScreenActivity extends AppCompatActivity {
 
+    float priX;
+    float priY;
+
+    float nexX;
+    float nexY;
+
+    float resX;
+    float resY;
+
+    String array = "";
+    int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lock_screen);
 
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-                | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 
         View view = findViewById(R.id.view);
-
-
-
         view.setOnTouchListener(new View.OnTouchListener() {
-
-            float priX;
-            float priY;
-
-            float nexX;
-            float nexY;
-
-            float curX;
-            float curY;
-
-            int[] array;
-            int i = 0;
 
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 int action = motionEvent.getAction();
 
-                curX = motionEvent.getX();
-                curY = motionEvent.getY();
+                float curX = motionEvent.getX();
+                float curY = motionEvent.getY();
 
                 if(action == MotionEvent.ACTION_DOWN){
                     priX = curX;
                     priY = curY;
-                    Log.d("test", "k");
+                    Log.d("test", "down");
+                    String s1 = "" + priX;
+                    Log.d("test",s1);
+                    String s2 = "" + priY;
+                    Log.d("test",s2);
                 }else if(action == MotionEvent.ACTION_UP){
                     nexX = curX;
                     nexY = curY;
-                    Log.d("test", "k");
+                    Log.d("test", "up");
+                    String s1 = "" + nexX;
+                    Log.d("test",s1);
+                    String s2 = "" + nexY;
+                    Log.d("test",s2);
 
-                    float resX = nexX - priX;
-                    float resY = nexY - priY;
+                    resX = nexX - priX;
+                    resY = nexY - priY;
+                    String s3 = "" + resX;
+                    Log.d("test",s3);
+                    String s4 = "" + resY;
+                    Log.d("test",s4);
 
-                    if( (resY - resX) > 0 && (resY + resX) > 0){                 //up
-                        array[i] = 1;
-                        Log.d("test", "k");
-                    } else if( (resY - resX) > 0 && (resY + resX) < 0){          //left
-                        array[i] = 2;
-                        Log.d("test", "k");
-                    } else if( (resY - resX) < 0 && (resY + resX) < 0){          //down
-                        array[i] = 3;
-                        Log.d("test", "k");
-                    } else if( (resY - resX) < 0 && (resY + resX) > 0){          //right
-                        array[i] = 4;
-                        Log.d("test", "k");
-                    }
-
-                    if(i < 3){
+                    if( resY - resX < 0 && resY + resX < 0){                 //up
+                        Log.d("test", "1");
+                        String s = "1";
+                        array = array + s;
+                        Log.d("test", "array = " + array);
                         i++;
-                        Log.d("test", "k");
-                    }else{
-                        Log.d("test",array.toString());
-                        i = 0;
+                    }
+                    else if( resY - resX > 0 && resY + resX < 0){          //leff
+                        Log.d("test", "2");
+                        String s = "2";
+                       array = array + s;
+                       Log.d("test", "array = " + array);
+                        i++;
+                    }
+                    else if( resY - resX > 0 && resY + resX > 0){          //down
+                        Log.d("test", "3");
+                        String s = "3";
+                        array = array + s;
+                        Log.d("test", "array = " + array);
+                        i++;
+                    }
+                    else if( resY - resX < 0 && resY + resX > 0){          //right
+                        Log.d("test", "4");
+                        String s = "4";
+                        array = array + s;
+                        Log.d("test", "array = " + array);
+                        i++;
                     }
 
+                    if(array.length() > 3){
+                        Log.d("test","array = " + array);
+                        //명령어 입력
+                        array = "";
+                    }
                 }
 
                 return true;
