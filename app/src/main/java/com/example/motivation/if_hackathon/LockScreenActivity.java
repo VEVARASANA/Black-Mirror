@@ -49,7 +49,8 @@ public class LockScreenActivity extends AppCompatActivity {
 
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
-    String path;
+    String rPath;
+    String sPath;
 
     ActionBar actionBar;
 
@@ -78,12 +79,13 @@ public class LockScreenActivity extends AppCompatActivity {
 
         mediaRecorder = new MediaRecorder();
 
-        path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/record.3gp";
+        sPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/siren.3gp";
+        rPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/record.3gp";
         mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-        mediaRecorder.setOutputFile(path);
+        mediaRecorder.setOutputFile(rPath);
         mediaPlayer = new MediaPlayer();
 
 
@@ -174,7 +176,7 @@ public class LockScreenActivity extends AppCompatActivity {
                             case "3333":
                                 Log.d("final", "사이렌");
                                 try {
-                                    mediaPlayer.setDataSource(path);
+                                    mediaPlayer.setDataSource(sPath);
                                     mediaPlayer.prepare();
                                     mediaPlayer.start();
                                 } catch (Exception e){
@@ -184,6 +186,21 @@ public class LockScreenActivity extends AppCompatActivity {
                             case "3434":
                                 mediaPlayer.stop();
                                 break;
+
+                            case "1234":
+                                Log.d("final", "방금 녹음한 소리");
+                                try {
+                                    mediaPlayer.setDataSource(rPath);
+                                    mediaPlayer.prepare();
+                                    mediaPlayer.start();
+                                } catch (Exception e){
+                                    Log.d("Lock", "play failed");
+                                }
+                                break;
+
+                            case "4321":
+                                mediaPlayer.stop();
+
                             case "4444":
                                 Log.d("final", "stop");
                                 finish();
