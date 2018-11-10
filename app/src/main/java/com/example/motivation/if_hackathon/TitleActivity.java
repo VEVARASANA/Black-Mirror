@@ -19,7 +19,8 @@ public class TitleActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TitleActivity.this, Tutorial1Acitivty.class);
+                Intent intent = new Intent(TitleActivity.this, TutorialAcitivty.class);
+                startActivity(intent);
             }
         });
     }

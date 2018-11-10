@@ -3,7 +3,7 @@ package com.example.motivation.if_hackathon;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Tutorial1Acitivty extends AppCompatActivity {
+public class TutorialAcitivty extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
