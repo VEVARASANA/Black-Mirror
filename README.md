@@ -1,5 +1,5 @@
 2018 IF HACKATHON <br>
-Team.KASASUNO
+Team.KARASUNO
 =========
 
 ## Project : Black Mirror
