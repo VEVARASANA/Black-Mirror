@@ -24,7 +24,7 @@ public class TitleActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
         actionBar.hide();
-        
+
         nextButton = (Button) findViewById(R.id.title_nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

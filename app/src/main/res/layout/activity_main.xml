@@ -57,10 +57,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
             <Button
                 android:id="@+id/main_goRecord"
                 android:layout_width="wrap_content"
@@ -74,10 +70,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/main_report"
@@ -93,10 +85,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/main_setting"

@@ -7,7 +7,6 @@
 
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
@@ -19,13 +18,13 @@
         android:textStyle="normal" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/setting_keyLayout"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -36,7 +35,6 @@
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
@@ -46,13 +44,6 @@
             android:textSize="18sp" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -73,7 +64,7 @@
         android:textSize="19sp" />
 
     <LinearLayout
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="280dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
@@ -87,7 +78,6 @@
             android:textSize="28sp" />
 
         <TextView
-            android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Team Karasuno"
@@ -95,14 +85,12 @@
 
 
         <TextView
-            android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이순형,최형우,한재상"
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="박현수,이유빈,이교은"
