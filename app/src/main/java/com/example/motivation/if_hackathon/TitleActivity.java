@@ -30,6 +30,7 @@ public class TitleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TitleActivity.this, TutorialAcitivty.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -38,7 +39,6 @@ public class TitleActivity extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
 
             } else {
-
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.SEND_SMS, Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE},
                         100);
