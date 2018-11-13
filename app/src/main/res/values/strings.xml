@@ -16,6 +16,7 @@
     <string name="record">녹음</string>
     <string name="report">신고</string>
     <string name="setting">설정</string>
+    <string name="startService">Black Mirror 실행</string>
 
 
 </resources>
