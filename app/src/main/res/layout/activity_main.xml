@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -11,19 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/solid"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/left_right_solid"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
                 android:textSize="23dp" />
 
             <android.support.v7.widget.SwitchCompat
-                android:id="@+id/main_serviceSwitch"
+                android:id="@+id/main_sw_service"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
@@ -43,56 +43,49 @@
                 android:track="@drawable/custom_switch_track" />
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/main_optionLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="27dp"
-            android:text="Option"
-            android:textColor="@color/stringColor"
-            android:textSize="25sp" />
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:id="@+id/main_recordLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="27dp"
+                android:text="Option"
+                android:textColor="@color/stringColor"
+                android:textSize="25sp" />
 
             <Button
-                android:id="@+id/main_goRecord"
+                android:id="@+id/main_btn_record"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="녹음"
                 android:textSize="20dp" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/main_reportLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp">
 
             <Button
-                android:id="@+id/main_report"
+                android:id="@+id/main_btn_report"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
                 android:text="신고"
                 android:textSize="20dp" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/main_settingLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="center">
 
             <Button
-                android:id="@+id/main_setting"
+                android:id="@+id/main_btn_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="설정"
                 android:textSize="20dp" />
         </LinearLayout>
-    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>

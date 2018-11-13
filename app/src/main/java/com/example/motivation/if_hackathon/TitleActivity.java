@@ -10,11 +10,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class TitleActivity extends AppCompatActivity {
 
-    Button nextButton;
+    Button btnStart;
     ActionBar actionBar;
 
     @Override
@@ -25,8 +24,8 @@ public class TitleActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.hide();
 
-        nextButton = (Button) findViewById(R.id.title_nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        btnStart = (Button) findViewById(R.id.title_btn_start);
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TitleActivity.this, TutorialAcitivty.class);
