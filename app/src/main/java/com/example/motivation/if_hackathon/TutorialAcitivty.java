@@ -3,7 +3,6 @@ package com.example.motivation.if_hackathon;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,131 +10,90 @@ import android.widget.TextView;
 
 public class TutorialAcitivty extends AppCompatActivity {
 
-    ImageView pos1;
-    ImageView pos2;
-    ImageView pos3;
-    ImageView pos4;
-    ImageView pos5;
-    Button nextButton;
-    Button previousButton;
-    Button startServiceButton;
-    TextView explainTitle;
-    TextView explain;
-    ImageView explainImg;
+    Button btnNext;
+    Button btnPrevious;
+    Button btnStart;
+    TextView textTitle;
+    TextView textContent;
+    ImageView imgContent;
 
-    int curPos = 1;
-    String TAG = "TutorialActivity";
+    ImageView[] imgPosArr = new ImageView[5];
+    int[] textTitleArr = {R.string.tutorial_title0, R.string.tutorial_title1, R.string.tutorial_title2, R.string.tutorial_title3, R.string.tutorial_title4};
+    int[] textContentArr = {R.string.tutorial_content0, R.string.tutorial_content1, R.string.tutorial_content2, R.string.tutorial_content3, R.string.tutorial_content4};
+    int[] imgContentArr = {R.drawable.img_purpose, R.drawable.img_phone, R.drawable.img_rec, R.drawable.img_help, R.drawable.img_warning};
 
+    int curPos = 0;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
-        pos1 = (ImageView) findViewById(R.id.tutorial_pos1);
-        pos2 = (ImageView) findViewById(R.id.tutorial_pos2);
-        pos3 = (ImageView) findViewById(R.id.tutorial_pos3);
-        pos4 = (ImageView) findViewById(R.id.tutorial_pos4);
-        pos5 = (ImageView) findViewById(R.id.tutorial_pos5);
-        explainTitle = findViewById(R.id.tutorial_explainTitle);
-        explain = findViewById(R.id.tutorial_subExplain);
-        startServiceButton = (Button) findViewById(R.id.tutorial_startButton);
-        explainImg = (ImageView) findViewById(R.id.tutorial_img);
+        imgPosArr[0] = (ImageView) findViewById(R.id.tutorial_pos1);
+        imgPosArr[1] = (ImageView) findViewById(R.id.tutorial_pos2);
+        imgPosArr[2] = (ImageView) findViewById(R.id.tutorial_pos3);
+        imgPosArr[3] = (ImageView) findViewById(R.id.tutorial_pos4);
+        imgPosArr[4] = (ImageView) findViewById(R.id.tutorial_pos5);
+        textTitle = findViewById(R.id.tutorial_explainTitle);
+        textContent = findViewById(R.id.tutorial_subExplain);
+        btnStart = (Button) findViewById(R.id.tutorial_startButton);
+        imgContent = (ImageView) findViewById(R.id.tutorial_img);
 
-
-        activateRound(curPos);
-        nextButton = (Button) findViewById(R.id.tutorial_nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        btnNext = (Button) findViewById(R.id.tutorial_nextButton);
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (curPos > 5)
-                    curPos = 5;
-                else
-                    curPos++;
-
-                activateRound(curPos);
+                if (curPos < 4) curPos++;
+                nowPage(curPos);
             }
         });
 
-        previousButton = (Button) findViewById(R.id.tutorial_previousButton);
-        previousButton.setOnClickListener(new View.OnClickListener() {
+        btnPrevious = (Button) findViewById(R.id.tutorial_previousButton);
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (curPos < 0)
-                    curPos = 1;
-                else
-                    curPos--;
-
-                Log.d(TAG, "curPos : " + curPos);
-                activateRound(curPos);
+                if (curPos > 0) curPos--;
+                nowPage(curPos);
             }
         });
 
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        nowPage(curPos);
     }
 
-    private void activateRound(int curPos) {
-        switch (curPos) {
-            case 1:
-                explainTitle.setText(R.string.explain1);
-                explain.setText(R.string.sub_explain1);
-                pos1.setImageResource(R.drawable.active_round);
-                pos2.setImageResource(R.drawable.normal_round);
-                pos3.setImageResource(R.drawable.normal_round);
-                pos4.setImageResource(R.drawable.normal_round);
-                pos5.setImageResource(R.drawable.normal_round);
-                explainImg.setImageResource(R.drawable.tutorial_1);
-                break;
-            case 2:
-                Log.d(TAG, "activateRound2 curPos : " + curPos);
-                explainTitle.setText(R.string.explain2);
-                explain.setText(R.string.sub_explain2);
-                pos1.setImageResource(R.drawable.normal_round);
-                pos2.setImageResource(R.drawable.active_round);
-                pos3.setImageResource(R.drawable.normal_round);
-                pos4.setImageResource(R.drawable.normal_round);
-                pos5.setImageResource(R.drawable.normal_round);
-                explainImg.setImageResource(R.drawable.img_phone);
-                break;
-            case 3:
-                Log.d(TAG, "activateRound3 curPos : " + curPos);
-                explainTitle.setText(R.string.explain3);
-                explain.setText(R.string.sub_explain3);
-                pos1.setImageResource(R.drawable.normal_round);
-                pos2.setImageResource(R.drawable.normal_round);
-                pos3.setImageResource(R.drawable.active_round);
-                pos4.setImageResource(R.drawable.normal_round);
-                pos5.setImageResource(R.drawable.normal_round);
-                explainImg.setImageResource(R.drawable.img_rec);
-                break;
-            case 4:
-                explainTitle.setText(R.string.explain4);
-                explain.setText(R.string.sub_explain4);
-                pos1.setImageResource(R.drawable.normal_round);
-                pos2.setImageResource(R.drawable.normal_round);
-                pos3.setImageResource(R.drawable.normal_round);
-                pos4.setImageResource(R.drawable.active_round);
-                pos5.setImageResource(R.drawable.normal_round);
-                explainImg.setImageResource(R.drawable.img_help);
-                break;
-            case 5:
-                explainTitle.setText(R.string.explain5);
-                explain.setText(R.string.sub_explain5);
-                pos1.setImageResource(R.drawable.normal_round);
-                pos2.setImageResource(R.drawable.normal_round);
-                pos3.setImageResource(R.drawable.normal_round);
-                pos4.setImageResource(R.drawable.normal_round);
-                pos5.setImageResource(R.drawable.active_round);
-                explainImg.setImageResource(R.drawable.img_warning);
-                startServiceButton.setVisibility(View.VISIBLE);
-                startServiceButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                break;
+    private void nowPage(int curPos) {
 
+        textTitle.setText(textTitleArr[curPos]);
+        textContent.setText(textContentArr[curPos]);
+        imgContent.setImageResource(imgContentArr[curPos]);
+
+        if (curPos == 4) {
+            btnStart.setVisibility(View.VISIBLE);
+            btnNext.setVisibility(View.GONE);
+        } else {
+            btnStart.setVisibility(View.GONE);
+            btnNext.setVisibility(View.VISIBLE);
+        }
+
+        if(curPos == 0)
+            btnPrevious.setVisibility(View.GONE);
+        else
+            btnPrevious.setVisibility(View.VISIBLE);
+
+        for (i = 0; i < imgPosArr.length; i++) {
+            if (i == curPos)
+                imgPosArr[i].setImageResource(R.drawable.active_round);
+            else
+                imgPosArr[i].setImageResource(R.drawable.normal_round);
         }
     }
 }

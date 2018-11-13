@@ -3,15 +3,19 @@
     <string name="title_hello">Hello Karasuno</string>
     <string name="title_start">시작하기</string>
     <string name="title_slogun">빠르고 정확한 신고</string>
-    <string name="explain1">1. 동기</string>
-    <string name="sub_explain1">보복범죄를 막기위해 제작하였습니다.</string>
-    <string name="explain2">2. 제스쳐 비밀번호</string>
-    <string name="sub_explain2">제스쳐를 통해 빠른 신고를 할 수 있습니다.</string>
-    <string name="explain3">3. 녹음 기능</string>
-    <string name="sub_explain3">녹음 기능을 통해 증거를 남길 수 있습니다.</string>
-    <string name="explain4">4. 문자 신고</string>
-    <string name="sub_explain4">문자 신고를 통해 바로 경찰에게 신고가 가능합니다.</string>
-    <string name="explain5">5. 경보</string>
-    <string name="sub_explain5">미리 녹음한 경보를 울려 더 확실하게 상황전달을 할 수 있습니다.</string>
+    <string name="tutorial_title0">1. 동기</string>
+    <string name="tutorial_content0">보복범죄를 막기위해 제작하였습니다.</string>
+    <string name="tutorial_title1">2. 제스쳐 비밀번호</string>
+    <string name="tutorial_content1">제스쳐를 통해 빠른 신고를 할 수 있습니다.</string>
+    <string name="tutorial_title2">3. 녹음 기능</string>
+    <string name="tutorial_content2">녹음 기능을 통해 증거를 남길 수 있습니다.</string>
+    <string name="tutorial_title3">4. 문자 신고</string>
+    <string name="tutorial_content3">문자 신고를 통해 바로 경찰에게 신고가 가능합니다.</string>
+    <string name="tutorial_title4">5. 경보</string>
+    <string name="tutorial_content4">미리 녹음한 경보를 울려 더 확실하게 상황전달을 할 수 있습니다.</string>
+    <string name="record">녹음</string>
+    <string name="report">신고</string>
+    <string name="setting">설정</string>
+
 
 </resources>
