@@ -23,7 +23,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle(R.string.Menu);
+        actionBar.setTitle(R.string.menu);
 
         swService = (SwitchCompat) findViewById(R.id.main_sw_service);
         swService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
