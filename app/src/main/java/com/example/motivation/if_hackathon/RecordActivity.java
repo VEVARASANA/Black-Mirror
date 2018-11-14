@@ -8,8 +8,10 @@ import android.media.MediaRecorder;
 import android.opengl.Matrix;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.ActionBar;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,18 +28,15 @@ public class RecordActivity extends Activity {
     private static final int MILLISINFUTURE = 1500 * 1000;
     private static final int COUNT_DOWN_INTERVAL = 1000;
 
-    private int count = 0, minute, second;
+    private int counter = 0, minute, second;
     private CountDownTimer countDownTimer;
 
-    TimerTask timerTask;
     ImageView btnRecord;
     TextView textRecordTime;
     MediaRecorder mediaRecorder;
     String path = "";
 
     boolean isActive = true;
-    int counter = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +113,7 @@ public class RecordActivity extends Activity {
 
     public String timeText(int count) {
 
-        Log.d("TimeText", ""+count);
+        Log.d("TimeText", "" + count);
         minute = count / 60;
         second = count % 60;
 

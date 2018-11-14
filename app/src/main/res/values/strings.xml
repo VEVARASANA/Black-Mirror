@@ -17,6 +17,9 @@
     <string name="report">신고</string>
     <string name="setting">설정</string>
     <string name="startService">Black Mirror 실행</string>
+    <string name="Tutorial">튜토리얼</string>
+    <string name="Menu">메뉴</string>
+    <string name="HowtoRecord">[ 사용법 ]\n\n아래의 버튼을 누르시면 녹음이 시작되고 \n다시 한번누르면 녹음이 종료 됩니다.</string>
 
 
 </resources>

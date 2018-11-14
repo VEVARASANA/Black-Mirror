@@ -17,7 +17,7 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Setting");
+        actionBar.setTitle(R.string.setting);
 
         LinearLayout linearLayout = findViewById(R.id.setting_keyLayout);
         linearLayout.setOnTouchListener(new View.OnTouchListener() {

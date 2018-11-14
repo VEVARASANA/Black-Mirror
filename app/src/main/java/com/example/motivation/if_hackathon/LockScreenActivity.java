@@ -54,6 +54,10 @@ public class LockScreenActivity extends AppCompatActivity {
 
     ActionBar actionBar;
 
+    int uiOptions;
+    int newUiOptions;
+    boolean isImmersiveModeEnabled;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,22 @@ public class LockScreenActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_FULLSCREEN
                         |WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        uiOptions = getWindow().getDecorView().getSystemUiVisibility();
+        newUiOptions = uiOptions;
+
+        isImmersiveModeEnabled = ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
+
+        if (isImmersiveModeEnabled) {
+            Log.i("Is on?", "Turning immersive mode mode off. ");
+        } else {
+            Log.i("Is on?", "Turning immersive mode mode on.");
+        }
+
+        newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
+        newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
         actionBar = getSupportActionBar();
         actionBar.hide();
@@ -173,6 +193,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 mediaRecorder.stop();
                                 Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
                                 break;
+
                             case "3333":
                                 Log.d("final", "사이렌");
                                 try {

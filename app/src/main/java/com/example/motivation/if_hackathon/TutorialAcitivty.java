@@ -2,6 +2,7 @@ package com.example.motivation.if_hackathon;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 public class TutorialAcitivty extends AppCompatActivity {
 
+    ActionBar actionBar;
     Button btnNext;
     Button btnPrevious;
     Button btnStart;
@@ -29,6 +31,9 @@ public class TutorialAcitivty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.Tutorial);
 
         imgPosArr[0] = (ImageView) findViewById(R.id.tutorial_pos1);
         imgPosArr[1] = (ImageView) findViewById(R.id.tutorial_pos2);
@@ -61,7 +66,7 @@ public class TutorialAcitivty extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TutorialAcitivty.this, MainActivity.class);
+                Intent intent = new Intent(TutorialAcitivty.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }
