@@ -26,18 +26,15 @@ public class RecordActivity extends Activity {
     private static final int MILLISINFUTURE = 1500 * 1000;
     private static final int COUNT_DOWN_INTERVAL = 1000;
 
-    private int count = 0, minute, second;
+    private int counter = 0, minute, second;
     private CountDownTimer countDownTimer;
 
-    TimerTask timerTask;
     ImageView btnRecord;
     TextView textRecordTime;
     MediaRecorder mediaRecorder;
     String path = "";
 
     boolean isActive = true;
-    int counter = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
