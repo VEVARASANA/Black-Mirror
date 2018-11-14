@@ -15,9 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="[ 사용법 ]\n\n아래의 버튼을 누르시면 녹음이 시작되고 \n다시 한번누르면 녹음이 종료 됩니다.
-
-"
+        android:text="@string/HowtoRecord"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +36,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:src="@mipmap/normal_record"
-        android:text="Record"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

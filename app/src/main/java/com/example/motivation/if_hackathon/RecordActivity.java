@@ -8,8 +8,10 @@ import android.media.MediaRecorder;
 import android.opengl.Matrix;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.ActionBar;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -111,7 +113,7 @@ public class RecordActivity extends Activity {
 
     public String timeText(int count) {
 
-        Log.d("TimeText", ""+count);
+        Log.d("TimeText", "" + count);
         minute = count / 60;
         second = count % 60;
 

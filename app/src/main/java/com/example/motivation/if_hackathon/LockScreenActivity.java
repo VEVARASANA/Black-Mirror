@@ -193,6 +193,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 mediaRecorder.stop();
                                 Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
                                 break;
+
                             case "3333":
                                 Log.d("final", "사이렌");
                                 try {
