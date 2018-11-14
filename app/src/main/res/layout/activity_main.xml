@@ -32,12 +32,13 @@
                 android:paddingBottom="12dp"
                 android:text="@string/startService"
                 android:textColor="@color/stringColor"
-                android:textSize="23dp" />
+                android:textSize="23sp" />
 
             <android.support.v7.widget.SwitchCompat
                 android:id="@+id/main_sw_service"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
                 android:layout_marginLeft="60dp"
                 android:thumb="@drawable/custom_switch_thumb"
                 android:track="@drawable/custom_switch_track" />
@@ -57,40 +58,40 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="27dp"
-                android:text="Option"
+                android:text="@string/option"
                 android:textColor="@color/stringColor"
                 android:textSize="25sp" />
 
             <Button
-                android:textColor="@android:color/white"
                 android:id="@+id/main_btn_record"
-                android:backgroundTint="#FF8C7E"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#FF8C7E"
                 android:text="@string/record"
-                android:textSize="20dp" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
 
             <Button
-                android:textColor="@android:color/white"
-                android:backgroundTint="#FF8C7E"
                 android:id="@+id/main_btn_report"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="25dp"
+                android:backgroundTint="#FF8C7E"
                 android:text="@string/report"
-                android:textSize="20dp" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
 
             <Button
-                android:textColor="@android:color/white"
-                android:backgroundTint="#FF8C7E"
                 android:id="@+id/main_btn_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#FF8C7E"
                 android:text="@string/setting"
-                android:textSize="20dp" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>

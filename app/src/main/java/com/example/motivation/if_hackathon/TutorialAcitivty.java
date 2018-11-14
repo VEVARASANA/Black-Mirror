@@ -33,7 +33,7 @@ public class TutorialAcitivty extends AppCompatActivity {
         setContentView(R.layout.activity_tutorial);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle(R.string.Tutorial);
+        actionBar.setTitle(R.string.tutorial);
 
         imgPosArr[0] = (ImageView) findViewById(R.id.tutorial_pos1);
         imgPosArr[1] = (ImageView) findViewById(R.id.tutorial_pos2);
