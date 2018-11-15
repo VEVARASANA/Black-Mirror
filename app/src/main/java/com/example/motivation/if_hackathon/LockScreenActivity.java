@@ -12,6 +12,7 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -57,6 +58,9 @@ public class LockScreenActivity extends AppCompatActivity {
     int uiOptions;
     int newUiOptions;
     boolean isImmersiveModeEnabled;
+
+    boolean isRecordOnChecked = false;
+    boolean isCommandRightChecked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,14 +114,15 @@ public class LockScreenActivity extends AppCompatActivity {
 
 
         View view = findViewById(R.id.view);
+        isCommandRightChecked = false;
         view.setOnTouchListener(new View.OnTouchListener() {
-
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 int action = motionEvent.getAction();
 
                 float curX = motionEvent.getX();
                 float curY = motionEvent.getY();
+
 
                 if (action == MotionEvent.ACTION_DOWN) {
                     priX = curX;
@@ -171,12 +176,14 @@ public class LockScreenActivity extends AppCompatActivity {
 
                     if (array.length() > 3) {
                         Log.d("test", "array = " + array);
+                        isCommandRightChecked = false;
                         switch (array) {
                             case "1111":
                                 Log.d("final", "메세지 신고");
-                                String test = "Test";
+                                String test = "꺅~강도이예요!";
                                 sendSMS(policeNumber, test);
                                 callPermission();
+                                isCommandRightChecked = true;
                                 break;
                             case "2222":
                                 Log.d("final", "녹음");
@@ -184,14 +191,16 @@ public class LockScreenActivity extends AppCompatActivity {
                                 mediaRecorder.prepare(); //녹음을 준비함 : 지금까지의 옵션에서 문제가 발생했는지 검사함
                                 mediaRecorder.start();
                                 Toast.makeText(getApplicationContext(), "녹음시작", Toast.LENGTH_LONG).show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                isCommandRightChecked = true;
                                 break;
 
                             case"2323":
                                 mediaRecorder.stop();
                                 Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
+                                isCommandRightChecked = true;
                                 break;
 
                             case "3333":
@@ -203,11 +212,13 @@ public class LockScreenActivity extends AppCompatActivity {
                                 } catch (Exception e){
                                     Log.d("Lock", "play failed");
                                 }
+                                Log.d("test", "array = " + array);
+                                isCommandRightChecked = true;
                                 break;
                             case "3434":
                                 mediaPlayer.stop();
+                                isCommandRightChecked = true;
                                 break;
-
                             case "1234":
                                 Log.d("final", "방금 녹음한 소리");
                                 try {
@@ -217,22 +228,41 @@ public class LockScreenActivity extends AppCompatActivity {
                                 } catch (Exception e){
                                     Log.d("Lock", "play failed");
                                 }
+                                isCommandRightChecked = true;
                                 break;
 
                             case "4321":
                                 mediaPlayer.stop();
+                                isCommandRightChecked = true;
+                                break;
 
                             case "4444":
                                 Log.d("final", "stop");
+                                isCommandRightChecked = true;
                                 finish();
                                 break;
+
                         }
                         final Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                        vibrator.vibrate(1000);
+                        if(isCommandRightChecked == true){
+                            vibrator.vibrate(300);
+                            new Handler().postDelayed(new Runnable()
+                            {
+                                @Override
+                                public void run()
+                                {
+                                    vibrator.vibrate(300);
+                                }
+                            }, 400);// 0.5초 정도 딜레이를 준 후 시작
+                            Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_LONG).show();
+                        }else if(isCommandRightChecked == false) {
+                            vibrator.vibrate(1000);
+                            Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_LONG).show();
+                        }
                         array = "";
                     }
-                }
 
+                }
                 return true;
             }
         });
