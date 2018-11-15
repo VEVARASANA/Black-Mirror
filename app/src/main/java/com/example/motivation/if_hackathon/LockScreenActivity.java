@@ -187,7 +187,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 break;
 
                             case "2222":
-                                if(isRecordOnChecked == false) {    //처음 누를 때는 그냥 녹음
+                                if(isRecordOnChecked == false) {
                                     Log.d("final", "녹음");
                                     try {
                                         mediaRecorder.prepare(); //녹음을 준비함 : 지금까지의 옵션에서 문제가 발생했는지 검사함
@@ -197,7 +197,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                     isRecordOnChecked = true;
-                                }else if(isRecordOnChecked == true){    //다시 누를 때는 녹음 끄기
+                                }else if(isRecordOnChecked == true){
                                     mediaRecorder.stop();
                                     Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
                                     isRecordOnChecked = false;
@@ -206,7 +206,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 break;
 
                             case "3333":
-                                if(isSirenOnChecked == false) {     //처음 누를 때는 그냥 사이렌
+                                if(isSirenOnChecked == false) {
                                     Log.d("final", "사이렌");
                                     try {
                                         mediaPlayer.setDataSource(sPath);
@@ -216,7 +216,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                         Log.d("Lock", "play failed");
                                     }
                                     isSirenOnChecked = true;
-                                }else if(isSirenOnChecked == true){     //다시 누를 때는 사이렌 끄기
+                                }else if(isSirenOnChecked == true){
                                     mediaPlayer.stop();
                                     isSirenOnChecked = false;
                                 }
@@ -258,7 +258,7 @@ public class LockScreenActivity extends AppCompatActivity {
                                 {
                                     vibrator.vibrate(300);
                                 }
-                            }, 400);// 0.4초 정도 딜레이를 준 후 시작
+                            }, 400);// 0.5초 정도 딜레이를 준 후 시작
                             Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_LONG).show();
                         }else if(isCommandRightChecked == false) {
                             vibrator.vibrate(1000);
