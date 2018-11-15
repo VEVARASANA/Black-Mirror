@@ -60,7 +60,9 @@ public class LockScreenActivity extends AppCompatActivity {
     boolean isImmersiveModeEnabled;
 
     boolean isRecordOnChecked = false;
-    boolean isCommandRightChecked;
+    boolean isSirenOnChecked = false;
+    boolean isPlayTheRecordingOnchecked = false;
+    boolean isCommandRightChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +116,6 @@ public class LockScreenActivity extends AppCompatActivity {
 
 
         View view = findViewById(R.id.view);
-        isCommandRightChecked = false;
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
@@ -176,7 +177,6 @@ public class LockScreenActivity extends AppCompatActivity {
 
                     if (array.length() > 3) {
                         Log.d("test", "array = " + array);
-                        isCommandRightChecked = false;
                         switch (array) {
                             case "1111":
                                 Log.d("final", "메세지 신고");
@@ -185,55 +185,42 @@ public class LockScreenActivity extends AppCompatActivity {
                                 callPermission();
                                 isCommandRightChecked = true;
                                 break;
-                            case "2222":
-                                Log.d("final", "녹음");
-                                try {
-                                mediaRecorder.prepare(); //녹음을 준비함 : 지금까지의 옵션에서 문제가 발생했는지 검사함
-                                mediaRecorder.start();
-                                Toast.makeText(getApplicationContext(), "녹음시작", Toast.LENGTH_LONG).show();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                                isCommandRightChecked = true;
-                                break;
 
-                            case"2323":
-                                mediaRecorder.stop();
-                                Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
+                            case "2222":
+                                if(isRecordOnChecked == false) {
+                                    Log.d("final", "녹음");
+                                    try {
+                                        mediaRecorder.prepare(); //녹음을 준비함 : 지금까지의 옵션에서 문제가 발생했는지 검사함
+                                        mediaRecorder.start();
+                                        Toast.makeText(getApplicationContext(), "녹음시작", Toast.LENGTH_LONG).show();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    isRecordOnChecked = true;
+                                }else if(isRecordOnChecked == true){
+                                    mediaRecorder.stop();
+                                    Toast.makeText(getApplicationContext(), "녹음완료", Toast.LENGTH_LONG).show();
+                                    isRecordOnChecked = false;
+                                }
                                 isCommandRightChecked = true;
                                 break;
 
                             case "3333":
-                                Log.d("final", "사이렌");
-                                try {
-                                    mediaPlayer.setDataSource(sPath);
-                                    mediaPlayer.prepare();
-                                    mediaPlayer.start();
-                                } catch (Exception e){
-                                    Log.d("Lock", "play failed");
+                                if(isSirenOnChecked == false) {
+                                    Log.d("final", "사이렌");
+                                    try {
+                                        mediaPlayer.setDataSource(sPath);
+                                        mediaPlayer.prepare();
+                                        mediaPlayer.start();
+                                    } catch (Exception e) {
+                                        Log.d("Lock", "play failed");
+                                    }
+                                    isSirenOnChecked = true;
+                                }else if(isSirenOnChecked == true){
+                                    mediaPlayer.stop();
+                                    isSirenOnChecked = false;
                                 }
-                                Log.d("test", "array = " + array);
-                                isCommandRightChecked = true;
-                                break;
-                            case "3434":
-                                mediaPlayer.stop();
-                                isCommandRightChecked = true;
-                                break;
-                            case "1234":
-                                Log.d("final", "방금 녹음한 소리");
-                                try {
-                                    mediaPlayer.setDataSource(rPath);
-                                    mediaPlayer.prepare();
-                                    mediaPlayer.start();
-                                } catch (Exception e){
-                                    Log.d("Lock", "play failed");
-                                }
-                                isCommandRightChecked = true;
-                                break;
-
-                            case "4321":
-                                mediaPlayer.stop();
-                                isCommandRightChecked = true;
+                                isCommandRightChecked =true;
                                 break;
 
                             case "4444":
@@ -242,7 +229,25 @@ public class LockScreenActivity extends AppCompatActivity {
                                 finish();
                                 break;
 
+                            case "1234":
+                                if(isPlayTheRecordingOnchecked == false) {
+                                    Log.d("final", "방금 녹음한 소리");
+                                    try {
+                                        mediaPlayer.setDataSource(rPath);
+                                        mediaPlayer.prepare();
+                                        mediaPlayer.start();
+                                    } catch (Exception e) {
+                                        Log.d("Lock", "play failed");
+                                    }
+                                    isPlayTheRecordingOnchecked = true;
+                                }else if(isPlayTheRecordingOnchecked == true){
+                                    mediaPlayer.stop();
+                                    isPlayTheRecordingOnchecked = false;
+                                }
+                                isCommandRightChecked = true;
+                                break;
                         }
+
                         final Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
                         if(isCommandRightChecked == true){
                             vibrator.vibrate(300);
