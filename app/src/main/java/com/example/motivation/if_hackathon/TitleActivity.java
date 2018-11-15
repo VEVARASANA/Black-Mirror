@@ -2,12 +2,14 @@ package com.example.motivation.if_hackathon;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,6 +17,7 @@ public class TitleActivity extends AppCompatActivity {
 
     Button btnStart;
     ActionBar actionBar;
+    String sfName = "myFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +27,22 @@ public class TitleActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.hide();
 
+        SharedPreferences sf = getSharedPreferences(sfName, 0);
+        final boolean isFirstLaunchAppChecked = sf.getBoolean("isFirstLaunchAppChecked",true);
+
         btnStart = (Button) findViewById(R.id.title_btn_start);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TitleActivity.this, TutorialAcitivty.class);
-                startActivity(intent);
-                finish();
+                if(isFirstLaunchAppChecked == true) {
+                    Intent intent = new Intent(TitleActivity.this, TutorialAcitivty.class);
+                    startActivity(intent);
+                    finish();
+                }else if(isFirstLaunchAppChecked == false){
+                    Intent intent = new Intent(TitleActivity.this, MenuActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 

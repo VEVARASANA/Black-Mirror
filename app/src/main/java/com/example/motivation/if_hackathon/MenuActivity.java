@@ -1,6 +1,7 @@
 package com.example.motivation.if_hackathon;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class MenuActivity extends AppCompatActivity {
     Button btnReport;
     Button btnSetting;
     ActionBar actionBar;
+    String sfName = "myFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,5 +67,12 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        SharedPreferences sf = getSharedPreferences(sfName, 0);
+        SharedPreferences.Editor editor = sf.edit();//저장하려면 editor가 필요
+        boolean isFirstLaunchAppChecked = false;
+        editor.putBoolean("isFirstLaunchAppChecked", isFirstLaunchAppChecked); // 입력
+        editor.commit(); // 파일에 최종 반영함
+
     }
 }
